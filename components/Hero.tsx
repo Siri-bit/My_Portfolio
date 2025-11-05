@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FiDownload, FiMail } from 'react-icons/fi'
+import { FiEye, FiMail } from 'react-icons/fi'
 import Typewriter from './Typewriter'
 
 export default function Hero() {
@@ -12,13 +12,9 @@ export default function Hero() {
     }
   }
 
-  const downloadResume = () => {
-    const link = document.createElement('a')
-    link.href = '/Sirisha_vl_90.pdf'
-    link.download = 'Sirisha_VL_Resume.pdf'
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+  const viewResume = () => {
+    // Open resume in a new tab
+    window.open('/Sirisha_vl.pdf', '_blank')
   }
 
   return (
@@ -79,10 +75,10 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4"
           >
             <button
-              onClick={downloadResume}
+              onClick={viewResume}
               className="group flex items-center justify-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-primary-600 to-purple-600 hover:from-primary-700 hover:to-purple-700 text-white rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl hover:shadow-primary-500/50 w-full sm:w-auto text-sm sm:text-base"
             >
-              <FiDownload className="w-5 h-5 group-hover:animate-bounce" />
+              <FiEye className="w-5 h-5 group-hover:animate-pulse" />
               View Resume
             </button>
             <button
